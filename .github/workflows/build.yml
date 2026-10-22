@@ -19,8 +19,8 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Compilar APK con Gradle del sistema
-      run: gradle assembleDebug
+    - name: Limpiar y compilar APK
+      run: gradle clean assembleDebug --refresh-dependencies
 
     - name: Subir APK generado
       uses: actions/upload-artifact@v4
