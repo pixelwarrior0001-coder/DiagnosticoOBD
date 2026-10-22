@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.hervis.diagnosticoobd'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.hervis.diagnosticoobd'
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName '0.1-alpha'
+    }
+}
