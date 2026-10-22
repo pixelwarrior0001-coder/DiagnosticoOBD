@@ -19,8 +19,11 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Compilar APK con Gradle del sistema
-      run: gradle assembleDebug
+    - name: Dar permisos de ejecución a Gradle
+      run: chmod +x gradlew || true
+
+    - name: Compilar APK
+      run: ./gradlew assembleDebug
 
     - name: Subir APK generado
       uses: actions/upload-artifact@v4
