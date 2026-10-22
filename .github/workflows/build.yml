@@ -19,14 +19,12 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Dar permisos a Gradle
-      run: chmod +x gradlew || true
-
-    - name: Compilar APK de depuración (Debug)
-      run: ./gradlew assembleDebug
+    - name: Compilar APK con Gradle del sistema
+      run: gradle assembleDebug
 
     - name: Subir APK generado
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
+        
