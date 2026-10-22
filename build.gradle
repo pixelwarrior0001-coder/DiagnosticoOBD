@@ -1,16 +1,20 @@
-plugins {
-    id 'com.android.application'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+    }
 }
 
-android {
-    namespace 'com.hervis.diagnosticoobd'
-    compileSdk 35
-
-    defaultConfig {
-        applicationId 'com.hervis.diagnosticoobd'
-        minSdk 23
-        targetSdk 32
-        versionCode 1
-        versionName '0.1-alpha'
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
